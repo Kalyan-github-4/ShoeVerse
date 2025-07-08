@@ -1,20 +1,51 @@
-<<<<<<< HEAD
-# React + Vite
+# 👟 ShoeVerse - Modern E-Commerce Shoe Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Banner](https://github.com/Kalyan-github-4/ShoeVerse/blob/main/ShoeVerse.png?raw=true)
 
-Currently, two official plugins are available:
+A responsive React e-commerce platform featuring advanced product filtering and sorting capabilities. Built with Vite for blazing fast performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🛒 Core Functionality
+- **Advanced Filtering System**
+  - Price range slider
+  - Color/size selectors
+  - Brand/category filters
+- **Smart Sorting**
+  - Price (low-high/high-low)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# ShoeVerse
->>>>>>> 88bfc77f79695c202d9c7e92ef3607611c734b2a
+### 🎨 UI/UX Highlights
+- Responsive design (mobile-friendly)
+- Product quick-view modal
+- Animated transitions
+- Accessibility optimized
 
-## 🚀 Project Screenshot
+## 🛠️ Tech Stack
 
-![ShoeVerse Preview](https://github.com/Kalyan-github-4/ShoeVerse/blob/main/ShoeVerse.png?raw=true)
+| Category       | Technologies                |
+|----------------|-----------------------------|
+| Frontend       | React, Vite, React Router   |
+| Styling        | CSS Modules   |
+| State Management| Context API  |
+| Build Tool     | Vite                        |
+| Deployment     |Not done yet            |
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/Kalyan-github-4/ShoeVerse.git
+
+# Navigate to project directory
+cd ShoeVerse
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
