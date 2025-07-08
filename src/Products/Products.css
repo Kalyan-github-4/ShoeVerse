@@ -1,0 +1,276 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin-left: 15rem; /* Adjust based on sidebar width */
+  margin-top: 1rem;
+}
+
+.card {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  /* Fade-in animation properties */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered animation delay for multiple cards */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+.card:nth-child(9) { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1.0s; }
+.card:nth-child(11) { animation-delay: 1.1s; }
+.card:nth-child(12) { animation-delay: 1.2s; }
+
+/* For cards beyond the 12th, use a cycling pattern */
+.card:nth-child(13) { animation-delay: 0.1s; }
+.card:nth-child(14) { animation-delay: 0.2s; }
+.card:nth-child(15) { animation-delay: 0.3s; }
+
+
+/* Keyframe animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Alternative fade-in from scale (uncomment to use instead) */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Alternative fade-in from left (uncomment to use instead) */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #d0d0d0;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  
+  /* Image fade-in effect */
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* Title animation */
+  opacity: 0;
+  animation: slideInUp 0.4s ease-out 0.4s forwards;
+}
+
+.card-reviews {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  /* Reviews animation */
+  opacity: 0;
+  animation: slideInUp 0.4s ease-out 0.5s forwards;
+}
+
+.rating-stars {
+  color: #ffb400;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.total-reviews {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  
+  /* Price animation */
+  opacity: 0;
+  animation: slideInUp 0.4s ease-out 0.6s forwards;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.price {
+  font-weight: 700;
+  color: #222;
+}
+
+.price del {
+  color: #999;
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+.bag {
+  color: #535353;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.bag:hover {
+  color: #ff5a5f;
+  transform: scale(1.1);
+}
+
+/* Loading state for better UX */
+.card-container.loading .card {
+  animation: none;
+  opacity: 0;
+}
+
+.card-container.loaded .card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: fadeInSimple 0.3s ease-out forwards;
+    transform: none;
+  }
+  
+  .card img,
+  .card-title,
+  .card-reviews,
+  .card-price {
+    animation: fadeInSimple 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeInSimple {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .card-container {
+    margin-left: 0;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  /* Adjust animation timing for smaller screens */
+  .card {
+    animation-duration: 0.5s;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    animation-duration: 0.4s;
+  }
+  
+  /* Reduce stagger delay on mobile */
+  .card:nth-child(n) { 
+    animation-delay: calc(0.05s * var(--card-index, 1)); 
+  }
+  
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.1s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.2s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.3s; }
+}
+
+/* Optional: Intersection Observer enhanced animations */
+.card.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.card.animate-in:nth-child(odd) {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.card.animate-in:nth-child(even) {
+  animation: fadeInScale 0.6s ease-out forwards;
+}

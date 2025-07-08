@@ -1,0 +1,25 @@
+/* Color-specific styles */
+#color-red:checked ~ .checkmark { 
+  background-color: red; 
+}
+
+#color-green:checked ~ .checkmark {
+  background-color: green;
+}
+
+#color-blue:checked ~ .checkmark {
+  background-color: blue;
+}
+
+#color-black:checked ~ .checkmark {
+  background-color: black;
+}
+
+#color-white:checked ~ .checkmark {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+#color-all:checked ~ .checkmark {
+  background: linear-gradient(90deg, blue, crimson);
+}

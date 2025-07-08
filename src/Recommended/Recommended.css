@@ -1,0 +1,61 @@
+/* Recommended section styles */
+.recommended-title {
+  margin-left: 20rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.recommended-flex {
+  display: flex;
+  margin-left: 20rem;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Button styles */
+.btns {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #555;
+}
+
+.btns:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+  transform: translateY(-1px);
+}
+
+.btns.active {
+  background: #2196f3;
+  color: white;
+  border-color: #2196f3;
+  box-shadow: 0 2px 5px rgba(33, 150, 243, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .recommended-title,
+  .recommended-flex {
+    margin-left: 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .recommended-title,
+  .recommended-flex {
+    margin-left: 1rem;
+  }
+  
+  .btns {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

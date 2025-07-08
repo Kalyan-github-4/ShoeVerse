@@ -1,0 +1,192 @@
+/* ===================
+   SIDEBAR MAIN STYLES
+   =================== */
+
+.sidebar {
+  width: 220px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  height: calc(100vh - 60px);
+  border-right: 1px solid #e0e0e0;
+  background: white;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 1190;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-title::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 18px;
+  background: #2196f3;
+  border-radius: 2px;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-label-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebar-label-container:hover {
+  background: #f5f5f5;
+}
+
+.sidebar-label-container input {
+  margin-right: 12px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+  background: #2196f3;
+  border-color: #2196f3;
+}
+
+.sidebar-label-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.color-option {
+  display: flex;
+  align-items: center;
+}
+
+.color-label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.line {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 20px 0;
+  border: none;
+}
+
+/* Color-specific styles */
+#color-red:checked ~ .checkmark { background-color: #ff5252; border-color: #ff5252; }
+#color-green:checked ~ .checkmark { background-color: #4caf50; border-color: #4caf50; }
+#color-blue:checked ~ .checkmark { background-color: #2196f3; border-color: #2196f3; }
+#color-black:checked ~ .checkmark { background-color: #212121; border-color: #212121; }
+#color-white:checked ~ .checkmark { background-color: white; border-color: #ccc; }
+#color-all:checked ~ .checkmark { 
+  background: linear-gradient(135deg, #2196f3 0%, #ff5252 100%);
+  border-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 20px;
+  }
+  
+  .sidebar-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .sidebar-label-container {
+    padding: 6px 10px;
+    background: #f9f9f9;
+    border-radius: 20px;
+  }
+}
+
+.sidebar::-webkit-scrollbar{
+  background-color: transparent;
+}
